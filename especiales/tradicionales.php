@@ -36,22 +36,22 @@
 
 			<div id="selector">
 				<div class="main">					
-					<!--
-					<ul id="carousel" class="elastislide-list">
-						<li><a href="#"><img src="img/tipos/18.png" alt="image01" /></a></li>
-						<li><a href="#"><img src="img/tipos/22.png" alt="image02" /></a></li>
-						<li><a href="#"><img src="img/tipos/26.png" alt="image03" /></a></li>
-						<li><a href="#"><img src="img/tipos/34.png" alt="image04" /></a></li>
-						<li><a href="#"><img src="img/tipos/42.png" alt="image05" /></a></li>
-						<li><a href="#"><img src="img/tipos/cascada.png" alt="image06" /></a></li>
-						<li><a href="#"><img src="img/tipos/fuente.png" alt="image07" /></a></li>
-						<li><a href="#"><img src="img/tipos/herreria.png" alt="image08" /></a></li>
-						<li><a href="#"><img src="img/tipos/mediaplancha.png" alt="image09" /></a></li>
-						<li><a href="#"><img src="img/tipos/plancha.png" alt="image10" /></a></li>						
-					</ul>
-					-->
+<!-- FORMA MANUAL DE ACOMODAR LAS IMAGENES EN EL SLIDER
+<ul id="carousel" class="elastislide-list">
+	<li><a href="#"><img src="img/tipos/18.png" alt="image01" /></a></li>
+	<li><a href="#"><img src="img/tipos/22.png" alt="image02" /></a></li>
+	<li><a href="#"><img src="img/tipos/26.png" alt="image03" /></a></li>
+	<li><a href="#"><img src="img/tipos/34.png" alt="image04" /></a></li>
+	<li><a href="#"><img src="img/tipos/42.png" alt="image05" /></a></li>
+	<li><a href="#"><img src="img/tipos/cascada.png" alt="image06" /></a></li>
+	<li><a href="#"><img src="img/tipos/fuente.png" alt="image07" /></a></li>
+	<li><a href="#"><img src="img/tipos/herreria.png" alt="image08" /></a></li>
+	<li><a href="#"><img src="img/tipos/mediaplancha.png" alt="image09" /></a></li>
+	<li><a href="#"><img src="img/tipos/plancha.png" alt="image10" /></a></li>						
+</ul>
+-->
 
-					<ul id="carousel" class="elastislide-list">
+					<ul id="tamaños" class="elastislide-list">
 						<?php 
 							$consulta = "SELECT * FROM tamaños";
 							$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
@@ -63,7 +63,7 @@
 						
 						<li>
 							<a href="#">
-								<img src="img/tamaños/<?php echo $columna['icono']; ?>"/>
+								<img src="img/tamaños/<?php echo $columna['icono_tam']; ?>"/>
 							</a>
 						</li>
 						
@@ -74,44 +74,102 @@
 					</ul>
 				</div>				
 					<script type="text/javascript">			
-						$( '#carousel' ).elastislide();			
+						$( '#tamaños' ).elastislide();			
 					</script>					
-				<div class="main">				
-					<ul id="carousel2" class="elastislide-list">
-						<li><a href="#"><img src="img/sabores/chocolate.png" alt="image01" /></a></li>
-						<li><a href="#"><img src="img/sabores/almendra.png" alt="image02" /></a></li>
-						<li><a href="#"><img src="img/sabores/esponjachocolate.png" alt="image03" /></a></li>
-						<li><a href="#"><img src="img/sabores/pina.png" alt="image04" /></a></li>
-						<li><a href="#"><img src="img/sabores/nuez.png" alt="image05" /></a></li>
-						<li><a href="#"><img src="img/sabores/esponjavainilla.png" alt="image06" /></a></li>
-						<li><a href="#"><img src="img/sabores/vainilla.png" alt="image07" /></a></li>						
+				<div class="main">					
+<!-- FORMA MANUAL DE ACOMODAR LAS IMAGENES EN EL SLIDER
+<ul id="carousel" class="elastislide-list">
+	<li><a href="#"><img src="img/tipos/18.png" alt="image01" /></a></li>
+	<li><a href="#"><img src="img/tipos/22.png" alt="image02" /></a></li>
+	<li><a href="#"><img src="img/tipos/26.png" alt="image03" /></a></li>
+	<li><a href="#"><img src="img/tipos/34.png" alt="image04" /></a></li>
+	<li><a href="#"><img src="img/tipos/42.png" alt="image05" /></a></li>
+	<li><a href="#"><img src="img/tipos/cascada.png" alt="image06" /></a></li>
+	<li><a href="#"><img src="img/tipos/fuente.png" alt="image07" /></a></li>
+	<li><a href="#"><img src="img/tipos/herreria.png" alt="image08" /></a></li>
+	<li><a href="#"><img src="img/tipos/mediaplancha.png" alt="image09" /></a></li>
+	<li><a href="#"><img src="img/tipos/plancha.png" alt="image10" /></a></li>						
+</ul>
+-->
+
+					<ul id="saboresTorta" class="elastislide-list">
+						<?php 
+							$consulta = "SELECT * FROM tortas";
+							$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+							$total = mysql_num_rows($resultado);
+						
+							if ($total> 0) {
+								while ($columna = mysql_fetch_array($resultado)):
+						?>
+						
+						<li onClick='localStorage["saborTorta"]=<?php echo $columna['id']; ?>;'>
+							<a href="#">
+								<img src="img/tortas/<?php echo $columna['icono_t']; ?>"/>
+							</a>
+						</li>
+						
+							<?php 
+								endwhile;
+							}
+							?>					
+					</ul>
+				</div>				
+					<script type="text/javascript">			
+						$( '#saboresTorta' ).elastislide();			
+					</script>
+
+
+				<div class="main">						
+					<ul id="betunes" class="elastislide-list">
+						<?php 
+							$consulta = "SELECT * FROM betunes";
+							$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+							$total = mysql_num_rows($resultado);
+						
+							if ($total> 0) {
+								while ($columna = mysql_fetch_array($resultado)):
+						?>
+						
+						<li>
+							<a href="#">
+								<img src="img/betunes/<?php echo $columna['icono_b']; ?>"/>
+							</a>
+						</li>
+						
+							<?php 
+								endwhile;
+							}
+							?>
 					</ul>
 				</div>										
 					<script type="text/javascript">			
-						$( '#carousel2' ).elastislide();
+						$( '#betunes' ).elastislide();
 					</script>
 				<div class="main">				
-					<ul id="carousel3" class="elastislide-list">
-						<li><a href="#"><img src="img/betunes/chantilly.png" alt="image01" /></a></li>
-						<li><a href="#"><img src="img/betunes/chocolate.png" alt="image02" /></a></li>
-						<li><a href="#"><img src="img/betunes/limon.png" alt="image03" /></a></li>
-						<li><a href="#"><img src="img/betunes/chantillychoco.png" alt="image04" /></a></li>						
+					<ul id="rellenos" class="elastislide-list">
+						<?php 
+							$consulta = "SELECT * FROM rellenos";
+							$resultado = mysql_query($consulta, $conexion) or die(mysql_error());
+							$total = mysql_num_rows($resultado);
+						
+							if ($total> 0) {
+								while ($columna = mysql_fetch_array($resultado)):
+						?>
+						
+						<li>
+							<a href="#">
+								<img src="img/rellenos/<?php echo $columna['icono_r']; ?>"/>
+							</a>
+						</li>
+						
+							<?php 
+								endwhile;
+							}
+							?>
 					</ul>
 				</div>										
 					<script type="text/javascript">			
-						$( '#carousel3' ).elastislide();
-					</script>
-				<div class="main">				
-					<ul id="carousel4" class="elastislide-list">
-						<li><a href="#"><img src="img/rellenos/sinrelleno.png" alt="image01" /></a></li>
-						<li><a href="#"><img src="img/rellenos/mermfresa.png" alt="image02" /></a></li>
-						<li><a href="#"><img src="img/rellenos/mermchabacano.png" alt="image03" /></a></li>
-						<li><a href="#"><img src="img/rellenos/mermpina.png" alt="image04" /></a></li>						
-						<li><a href="#"><img src="img/rellenos/mermnaranja.png" alt="image04" /></a></li>						
-					</ul>
-				</div>										
-					<script type="text/javascript">			
-						$( '#carousel4' ).elastislide();
+						$( '#rellenos' ).elastislide();
 					</script>
 			</div>
 			<div id="buscador">

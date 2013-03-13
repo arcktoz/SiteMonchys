@@ -26,7 +26,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	background: transparent url(../img/browser.png) no-repeat top left;
+	/*background: transparent url(../img/browser.png) no-repeat top left;*/
 	box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
 }
 .dg-wrapper a.dg-transition{
@@ -38,9 +38,9 @@
 }
 .dg-wrapper a img{
 	display: block;
-	padding: 41px 0px 0px 1px;
+	/*padding: 41px 0px 0px 1px;*/
 }
-.dg-wrapper a div{
+/*.dg-wrapper a div{
 	font-style: italic;
 	text-align: center;
 	line-height: 50px;
@@ -54,12 +54,12 @@
 }
 .dg-wrapper a.dg-center div{
 	display: block;
-}
+}*/
 .dg-container nav{
 	width: 58px;
 	position: absolute;
 	z-index: 1000;
-	bottom: 40px;
+	bottom: 60px;
 	left: 50%;
 	margin-left: -29px;
 }
@@ -70,7 +70,7 @@
 	width: 24px;
 	height: 25px;
 	opacity: 0.8;
-	background: transparent url(../img/iconos/arrows.png) no-repeat top left;
+	background: transparent url(../img/iconos/arrows2.png) no-repeat top left;
 }
 .dg-container nav span:hover{
 	opacity: 1;

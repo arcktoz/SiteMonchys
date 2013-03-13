@@ -39,9 +39,9 @@
 			
 			<div id="dg-container" class="contSlide dg-container">
 				<div class="dg-wrapper">
-					<a href="tradicionales.php"><img src="img/5.jpg" alt="tradicionales"><div>Pasteles Tradicionales</div></a>
-					<a href="kekis.php"><img src="img/6.jpg" alt="kekis"><div>Pastel de Kekis</div></a>
-					<a href="fondant.php"><img src="img/7.jpg" alt="fondant"><div >Pastel con Fondant</div></a>
+					<a href="tradicionales.php"><img src="img/tradicionales.jpg" alt="tradicionales"></a>
+					<a href="kekis.php"><img src="img/kekis.jpg" alt="kekis"></a>
+					<a href="fondant.php"><img src="img/fondant.jpg" alt="fondant"></a>
 				</div>
 			
 				<nav>	

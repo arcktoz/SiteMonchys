@@ -11,6 +11,8 @@
 
 .elastislide-carousel ul li {
 	min-width: 20px; /* minimum width of the image (min width + border) */
+	max-width: 108px; /*AGREGADO PARA QUE NO SE MOSTRARA IMAGENES GRANDES CUANDO SOLO HAY UNA O DOS */
+	max-height: 114px;/*AGREGADO PARA QUE NO SE MOSTRARAN IMAGENES GRANDES CUANDO SOLO HAY UNA O DOS*/
 }
 
 .elastislide-wrapper {
